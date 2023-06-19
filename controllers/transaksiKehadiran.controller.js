@@ -281,11 +281,12 @@ const chooseDateAttendance = async (req, res) => {
 
   try {
     const attendance = await Attendance.findOne({ where: { npp: npp, tanggal_hadir: tanggal_hadir } });
-    if (!attendance) {
-      return res.status(404).json({ success: false, message: "attendance not found" });
-    }
 
     const numbersOfAttendance = await Attendance.count({ where: { [Op.and]: [{ npp: npp, tanggal_hadir: { [Op.between]: [startDate, endDate] } }] } });
+
+    if (!attendance) {
+      return res.status(404).json({ success: false, message: "attendance not found", numbers_of_attendance: numbersOfAttendance });
+    }
 
     const jamTerbuang = await Jam_terbuang.findOne({ where: { npp: npp, tanggal: tanggal_hadir } });
 
