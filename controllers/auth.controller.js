@@ -139,11 +139,6 @@ const updatePassword = async (req, res) => {
 
   const { npp, new_password } = req.body;
 
-  // Validasi panjang password harus 8 karakter
-  if (new_password.length !== 8) {
-    return res.status(400).json({ success: false, message: "new password must be 8 characters long" });
-  }
-
   try {
     const user = await User.findOne({ where: { npp: npp } });
     if (!user) {
