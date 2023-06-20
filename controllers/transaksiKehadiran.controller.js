@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 
 
 // Mengkonversi tanggal dan waktu sesuai yang dibutuhkan
-let dateNow = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
+let dateNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }));
 setInterval(function () { dateNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' })) }, 1000)
 const convertDay = day => {
   let hari;
