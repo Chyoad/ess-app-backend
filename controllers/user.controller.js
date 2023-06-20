@@ -116,6 +116,8 @@ const getUserProfile = async (req, res) => {
         cuti_besar: cuti_besar,
         pensiun: pensiun,
         lama_masa_kerja: lama_masa_kerja,
+        foto: personil.foto,
+        kode_lokasi_tugas: personil.kode_lokasi_tugas
       }
     })
 

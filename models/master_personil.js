@@ -79,6 +79,7 @@ module.exports = (sequelize, DataTypes) => {
     mulai_pegawai_tetap: DataTypes.DATEONLY,
     mulai_masuk_kerja: DataTypes.DATEONLY,
     poin: DataTypes.INTEGER,
+    foto: DataTypes.STRING,
     created_date: { allowNull: false, type: DataTypes.DATE },
     updated_by: DataTypes.STRING
   }, {

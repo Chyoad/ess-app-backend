@@ -10,12 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       npp: {
-        type: Sequelize.STRING(9),
-        references: {
-          model: 'master_personils',
-          key: 'npp',
-          as: 'npp',
-        }
+        type: Sequelize.STRING(9)
       },
       tingkat_pendidikan: {
         type: Sequelize.STRING(100)

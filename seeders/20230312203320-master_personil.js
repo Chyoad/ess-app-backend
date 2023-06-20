@@ -40,6 +40,7 @@ module.exports = {
         mulai_pegawai_tetap: '2015-01-01',
         mulai_masuk_kerja: '2015-02-02',
         poin: '100',
+        foto: 'user',
         created_date: new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' })),
         updated_by: 'ADMIN'
       })

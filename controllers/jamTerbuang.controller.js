@@ -80,13 +80,11 @@ const chooseDateJamTerbuang = async (req, res) => {
 
   try {
     const jamTerbuang = await Jam_terbuang.findOne({ where: { npp: npp, tanggal: tanggal } });
-
-    const numbersOfJamTerbuang = await Jam_terbuang.sum('total_jam_terbuang', { where: { [Op.and]: [{ npp: npp, tanggal: { [Op.between]: [startDate, endDate] } }] } });
-
     if (!jamTerbuang) {
-      return res.status(404).json({ success: false, message: "jam terbuang not found", numbers_of_Jam_terbuang: convertToTimeFormat(numbersOfJamTerbuang) });
+      return res.status(404).json({ success: false, message: "jam terbuang not found" });
     }
 
+    const numbersOfJamTerbuang = await Jam_terbuang.sum('total_jam_terbuang', { where: { [Op.and]: [{ npp: npp, tanggal: { [Op.between]: [startDate, endDate] } }] } });
 
     return res.status(200).json({
       success: true,
